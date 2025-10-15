@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>今日の運勢</title>
+  <style>
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      background: linear-gradient(to bottom right, #fceabb, #f8b500);
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 30px;
+    }
+
+    button {
+      font-size: 1.2em;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      background-color: #ff9800;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #e68900;
+    }
+
+    #result {
+      margin-top: 40px;
+      font-size: 1.8em;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎴 今日の運勢占い 🎴</h1>
+  <button onclick="showFortune()">占う</button>
+
+  <div id="result"></div>
+
+  <script>
+    function showFortune() {
+      const fortunes = ["大吉", "中吉", "小吉", "末吉", "吉", "凶", "大凶"];
+      const randomIndex = Math.floor(Math.random() * fortunes.length);
+      const result = fortunes[randomIndex];
+      document.getElementById("result").textContent = "あなたの今日の運勢は「" + result + "」です！";
+    }
+  </script>
+
+</body>
+</html>
